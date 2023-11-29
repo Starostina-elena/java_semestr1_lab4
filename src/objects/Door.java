@@ -23,11 +23,11 @@ public class Door implements DestinationChangeable {
         }
     }
 
-    public void changeDestination(String new_destination) throws DestinationException {
-        if (Objects.equals(new_destination, "никуда")) {
+    public void changeDestination(String newDestination) throws DestinationException {
+        if (Objects.equals(newDestination, "никуда")) {
             this.destination = DestinationEnum.NOWHERE;
         }
-        else if (Objects.equals(new_destination, "вверх") || Objects.equals(new_destination, "вниз")) {
+        else if (Objects.equals(newDestination, "вверх") || Objects.equals(newDestination, "вниз")) {
             throw new DestinationException("направления вверх и вниз не должны быть использованы для дверей");
         }
         else {

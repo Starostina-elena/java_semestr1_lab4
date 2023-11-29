@@ -4,7 +4,7 @@ import exceptions.DestinationException;
 
 public interface DestinationChangeable {
 
-    void changeDestination(String new_destination) throws DestinationException;
+    void changeDestination(String newDestination) throws DestinationException;
 
     String toString();
     boolean equals(Object o);

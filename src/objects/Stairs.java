@@ -23,11 +23,11 @@ public class Stairs implements DestinationChangeable {
         }
     }
 
-    public void changeDestination(String new_destination) throws DestinationException {
-        if (Objects.equals(new_destination, "вверх")) {
+    public void changeDestination(String newDestination) throws DestinationException {
+        if (Objects.equals(newDestination, "вверх")) {
             this.destination = DestinationEnum.UP;
         }
-        else if (Objects.equals(new_destination, "вниз")) {
+        else if (Objects.equals(newDestination, "вниз")) {
             this.destination = DestinationEnum.DOWN;
         }
         else {
