@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="lab4" default="run">
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac destdir="build/classes" includeantruntime="false">
+            <src path="src/exceptions"/>
+        </javac>
+        <javac destdir="build/classes" includeantruntime="false">
+            <src path="src/interfaces"/>
+        </javac>
+        <javac destdir="build/classes" includeantruntime="false">
+            <src path="src/abstractClasses"/>
+        </javac>
+        <javac destdir="build/classes" includeantruntime="false">
+            <src path="src/objects"/>
+        </javac>
+        <javac destdir="build/classes" includeantruntime="false">
+            <src path="src/people"/>
+        </javac>
+        <javac srcdir="src/" destdir="build/classes" includeantruntime="false">
+        </javac>
+    </target>
+    <target name="package" depends="compile">
+        <jar destfile="build/lab4.jar"
+             basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="Main"/>
+            </manifest>
+        </jar>
+    </target>
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+</project>

@@ -1,0 +1,133 @@
+@startuml
+class people.Homsa {
+- int numberOfCookies
++ String eatCookies()
++ String addCookies(int)
++ String toString()
+}
+class objects.Door {
+- DestinationEnum destination
++ void changeDestination(String)
++ String toString()
++ boolean equals(Object)
++ int hashCode()
+}
+class objects.Textile {
++ String spoil()
++ String toString()
+}
+class objects.Stairs {
+- DestinationEnum destination
++ void changeDestination(String)
++ String toString()
++ boolean equals(Object)
++ int hashCode()
+}
+class objects.Paper {
++ String spoil()
++ String toString()
+}
+enum objects.DestinationEnum {
++  SOMEWHERE
++  NOWHERE
++  UP
++  DOWN
+- String destination
+}
+class people.Misa {
++ String sing()
++ String toString()
+}
+class people.Hemyl {
++ Wings wings
++ String fly()
++ String toString()
+}
+class people.Hemyl$Wings {
++ String tremble()
++ String toString()
++ boolean equals(Object)
++ int hashCode()
+}
+class exceptions.DestinationException {
+}
+abstract class abstractClasses.Handcrafts {
+- String material
++ String getMaterial()
++ boolean equals(Object)
++ int hashCode()
+}
+class objects.Wood {
++ String spoil()
++ String toString()
+}
+class people.PreviousOwners {
++ Jam jam
++ String packStuff()
++ String toString()
+}
+class people.PreviousOwners$Jam {
+~ String taste
++ String smell()
++ String toString()
++ boolean equals(Object)
++ int hashCode()
+}
+abstract class abstractClasses.Person {
+- String personAction
+- String originalPersonAction
+- String name
+~ boolean madness
++ void behave_as_somebody_else(Person)
++ void calm_down()
++ String getName()
++ String toString()
++ boolean equals(Object)
++ int hashCode()
+}
+interface interfaces.DestinationChangeable {
+~ void changeDestination(String)
+~ String toString()
+~ boolean equals(Object)
+~ int hashCode()
+}
+interface interfaces.Spoilable {
++ {static} String desription
+~ String spoil()
+~ String toString()
+~ boolean equals(Object)
+~ int hashCode()
+}
+class people.Mymla {
++ String grumble()
++ String toString()
+}
+class exceptions.HomsaZeroCookiesException {
+}
+class Main {
++ {static} void main(String[])
+}
+class Floor {
+~ Spoilable[] floor_contains
+- int cur_index
+~ void add_trash(Spoilable)
+~ void print_trash()
+}
+
+
+abstractClasses.Person <|-- people.Homsa
+interfaces.DestinationChangeable <|.. objects.Door
+abstractClasses.Handcrafts <|-- objects.Textile
+interfaces.DestinationChangeable <|.. objects.Stairs
+abstractClasses.Handcrafts <|-- objects.Paper
+abstractClasses.Person <|-- people.Misa
+abstractClasses.Person <|-- people.Hemyl
+people.Hemyl +.. people.Hemyl$Wings
+exceptions.Exception <|-- exceptions.DestinationException
+interfaces.Spoilable <|.. abstractClasses.Handcrafts
+abstractClasses.Handcrafts <|-- objects.Wood
+abstractClasses.Person <|-- people.PreviousOwners
+people.PreviousOwners +.. people.PreviousOwners$Jam
+abstractClasses.Person <|-- people.Mymla
+exceptions.RuntimeException <|-- exceptions.HomsaZeroCookiesException
+@enduml
