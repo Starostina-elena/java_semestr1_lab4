@@ -3,23 +3,25 @@ import interfaces.Spoilable;
 import objects.*;
 import people.*;
 
+
+
 public class Main {
 
     public static void main(String[] args) {
 
         class Floor {
 
-            Spoilable[] floor_contains = new Spoilable[4];
-            private int cur_index = 0;
+            Spoilable[] floorContains = new Spoilable[4];
+            private int curIndex = 0;
 
-            void add_trash(Spoilable obj) {
-                floor_contains[cur_index] = obj;
-                cur_index++;
+            void addTrash(Spoilable obj) {
+                floorContains[curIndex] = obj;
+                curIndex++;
             }
 
-            void print_trash() {
-                for (int i = 0; i < cur_index; i++) {
-                    System.out.println(floor_contains[i]);
+            void printTrash() {
+                for (int i = 0; i < curIndex; i++) {
+                    System.out.println(floorContains[i]);
                 }
             }
 
@@ -43,8 +45,8 @@ public class Main {
         System.out.println(previousOwner);
         System.out.println(previousOwner.packStuff());
         System.out.println(previousOwner.jam.smell());
-        PreviousOwners.Jam new_jam = new PreviousOwners.Jam("лимонный");
-        System.out.println(new_jam.smell());
+        PreviousOwners.Jam newJam = new PreviousOwners.Jam("лимонный");
+        System.out.println(newJam.smell());
 
         try {
             Door door1 = new Door("в Нарнию");
@@ -92,21 +94,21 @@ public class Main {
         }
 
 
-        Textile paper_trash = new Textile("ткань");
-        System.out.println(paper_trash);
-        System.out.println(paper_trash.spoil());
-        Paper textile_trash = new Paper("бумага");
-        System.out.println(textile_trash);
-        System.out.println(textile_trash.spoil());
-        Wood wooden_trash = new Wood("дерево");
-        System.out.println(wooden_trash);
-        System.out.println(wooden_trash.spoil());
+        Textile paperTrash = new Textile("ткань");
+        System.out.println(paperTrash);
+        System.out.println(paperTrash.spoil());
+        Paper textileTrash = new Paper("бумага");
+        System.out.println(textileTrash);
+        System.out.println(textileTrash.spoil());
+        Wood woodenTrash = new Wood("дерево");
+        System.out.println(woodenTrash);
+        System.out.println(woodenTrash.spoil());
 
         Floor floor = new Floor();
-        floor.add_trash(paper_trash);
-        floor.add_trash(textile_trash);
-        floor.add_trash(wooden_trash);
-        floor.add_trash(new Spoilable() {
+        floor.addTrash(paperTrash);
+        floor.addTrash(textileTrash);
+        floor.addTrash(woodenTrash);
+        floor.addTrash(new Spoilable() {
             @Override
             public String spoil() {
                 return "безымянная вещь из анонимного класса портится";
@@ -117,12 +119,12 @@ public class Main {
                 return "Безымянная вещь из анонимного класса грустно лежит на полу";
             }
         });
-        floor.print_trash();
+        floor.printTrash();
 
-        misa.behave_as_somebody_else(homsa);
+        misa.behaveAsSomebodyElse(homsa);
         System.out.println(misa);
         System.out.println(misa.equals(homsa));
-        misa.calm_down();
+        misa.calmDown();
         System.out.println(misa);
         System.out.println(misa.equals(homsa));
 

@@ -1,9 +1,6 @@
 package objects;
 
 import abstractClasses.Handcrafts;
-import interfaces.Spoilable;
-
-import java.util.Objects;
 
 public class Textile extends Handcrafts {
 

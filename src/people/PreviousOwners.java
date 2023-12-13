@@ -8,9 +8,9 @@ public class PreviousOwners extends Person {
 
     public Jam jam;
 
-    public PreviousOwners(String name, String action, String jam_taste) {
+    public PreviousOwners(String name, String action, String jamTaste) {
         super(name, action);
-        jam = new Jam(jam_taste);
+        jam = new Jam(jamTaste);
     }
 
     public static class Jam {

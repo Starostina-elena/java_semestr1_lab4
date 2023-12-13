@@ -15,12 +15,12 @@ public abstract class Person {
         this.name = name;
     }
 
-    public void behave_as_somebody_else(Person person) {
+    public void behaveAsSomebodyElse(Person person) {
         personAction = person.personAction;
         madness = true;
-    };
+    }
 
-    public void calm_down() {
+    public void calmDown() {
         personAction = originalPersonAction;
         madness = false;
     }

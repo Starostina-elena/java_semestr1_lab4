@@ -2,8 +2,6 @@ package objects;
 
 import abstractClasses.Handcrafts;
 
-import java.util.Objects;
-
 public class Paper extends Handcrafts {
 
     public Paper(String material) {
